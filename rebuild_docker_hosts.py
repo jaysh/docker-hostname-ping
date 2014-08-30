@@ -67,10 +67,10 @@ def reload_dnsmasq():
     """Attempts to reload dnsmasq by sending it SIGHUP."""
 
     reload_dnsmasq_exit_code = subprocess.call([
-        'sudo', '-n', # Run sudo non-interactively, and
-        '-u', DNSMASQ_USER, 'pkill', # switch to the dnsmasq user to try to signal
+        'sudo', '-n', # Run sudo non-interactively, and switch to
+        '-u', DNSMASQ_USER, 'pkill', # the dnsmasq user to try to signal
         '-HUP', # (by sending SIGHUP)
-        '-u', DNSMASQ_USER, # any processes owned by it
+        '-u', DNSMASQ_USER, # any processes owned by it and
         '-f', '/usr/sbin/dnsmasq' # that appear to be a dnsmasq process.
     ])
     if reload_dnsmasq_exit_code != 0:
