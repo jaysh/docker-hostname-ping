@@ -92,6 +92,7 @@ def main():
         print "Cannot write docker hosts file. Please check the permissions."
         raise
 
+    reload_dnsmasq()
 
 if __name__ == '__main__':
     main()
