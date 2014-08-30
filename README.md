@@ -33,3 +33,4 @@ There are few parts that need to be installed.
 * add the contents of docker-bashrc.sh to your `.bashrc`
 * copy `rebuild_docker_hosts.py` to your `bin` (e.g. `$HOME/bin` or `/usr/local/bin`)
 * enable your user to sudo to `nobody` without a password (I have a docker group, so I use `%docker ALL=(nobody) NOPASSWD: ALL`)
+* create `/etc/hosts.docker` and ensure that it's writable by your user (e.g. `sudo chown root.docker /etc/hosts.docker && chmod 0775 /etc/hosts.docker`)
